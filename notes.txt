@@ -1,0 +1,63 @@
+import { getMaxListeners } from "cluster"
+
+JAVASCRIPT
+
+//Methods
+a method is a function that's associated with an object ex:
+const s
+console.log(s.toUpperCase());
+
+
+
+//Concatenation
+const name=john;
+const age=30;
+
+const hello = `My name is ${name} and I am ${age}`;
+console.log(hello); ===========My name is John and I am 30.
+
+//Arrays
+const fruits = ['apples', 'oranges', 'pears', true, 10];
+console.log(fruits); ==========fruits are listed, even the boolean and the number are listed in the array
+
+//Push Method
+fruits.push('mangos);
+=============mangos are added to the end
+
+//Unshift Method (add a value to the beginning)
+fruits.unshift('bananas'); 
+===========bananas added to beginning
+
+//Pop methd (if you want to take the last one off)
+fruits.pop();
+==========removes mangos
+
+//Check to see if something is an Array
+console.log(Array.isArray(fruits));
+===========true
+
+//Get the index of an object (locates the first occurence of the value in the array)
+console.log(fruits.indexOf('oranges'));
+=============2
+
+//Creating an object literal (creating key value pairs)
+const person = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age:30,
+    hobbies: ['music', 'movies', 'sports'],
+    address: {
+        street: '50 main street',
+        city: 'Boston',
+        state: 'MA'
+    }
+}
+
+//adding properties
+person.email = 'john@gmail.com'
+
+
+//Destructuring (pulling info out rather than assigning a variable)
+const { firstName, lastName } = person;
+console.log(firstName);
+=======John  

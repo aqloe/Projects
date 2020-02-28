@@ -1,0 +1,415 @@
+
+JAVASCRIPT
+
+//Methods
+a method is a function that's associated with an object ex:
+const s
+console.log(s.toUpperCase());
+
+
+//Concatenation
+const name=john;
+const age=30;
+
+const hello = `My name is ${name} and I am ${age}`;
+console.log(hello); ===========My name is John and I am 30.
+
+//Arrays
+const fruits = ['apples', 'oranges', 'pears', true, 10];
+console.log(fruits); ==========fruits are listed, even the boolean and the number are listed in the array
+
+//Push Method
+fruits.push('mangos);
+=============mangos are added to the end
+
+//Unshift Method (add a value to the beginning)
+fruits.unshift('bananas'); 
+===========bananas added to beginning
+
+//Pop methd (if you want to take the last one off)
+fruits.pop();
+==========removes mangos
+
+//Check to see if something is an Array
+console.log(Array.isArray(fruits));
+===========true
+
+//Get the index of an object (locates the first occurence of the value in the array)
+console.log(fruits.indexOf('oranges'));
+=============2
+
+//Creating an object literal (creating key value pairs)
+const person = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age:30,
+    hobbies: ['music', 'movies', 'sports'],
+    address: {
+        street: '50 main street',
+        city: 'Boston',
+        state: 'MA'
+    }
+}
+
+//adding properties
+person.email = 'john@gmail.com'
+
+
+//Destructuring (pulling info out rather than assigning a variable)
+const { firstName, lastName } = person;
+console.log(firstName);
+=======John  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+`half of 100 is ${100 / 2}`
+When you write something inside ${} in a template literal, its result will be
+computed, converted to a string, and included at that position. The example
+produces “half of 100 is 50”.
+
+~~~~~~~~~~~~~~
+console.log(8 * null)
+// → 0
+console.log("5" - 1)
+// → 4
+console.log("5" + 1)
+// → 51
+console.log("five" * 2)
+// → NaN
+console.log(false == 0)
+// → true
+
+When an operator is applied to the “wrong” type of value, JavaScript will quietly convert that value to the type it needs, using a set of rules that often aren’t what you want or expect. This is called type coercion. The null in the first expression becomes 0, and the "5" in the second expression becomes 5 (from string to number). Yet in the third expression, + tries string concatenation before numeric addition, so the 1 is converted to "1" (from number to string).
+~~~~~~~~~~~~~~~~~
+But what if you want to test whether something refers to the precise value false? Expressions like 0 == false and "" == false are also true because of automatic type conversion. When you do not want any type conversions to happen, there are two additional operators: === and !==. The first tests whether a value is precisely equal to the other, and the second tests whether it is not precisely equal. So "" === false is false as expected.
+~~~~~~~~~~~~~~~~~
+let variable = "value of your variable";
+this 'variable' is also known as a binding. These bindings are like tentacles rather than boxes because they grasp rather than contain values.
+
+
+//undefined variable
+let makeThisVeryMeaningful;
+
+
+//defined variable
+let makeThisMeaningful="value";
+
+
+//if you want to make two variables give them their own lines
+let apples="Red";
+let oranges="Green";
+
+
+//uh oh the variable's value changes
+let interestRate = 0.3;
+interestRate=1;
+
+
+//if you don't want the value of the variable to change (you'll get an error here because they conflict)
+//const interestRate2 = 0.3;
+//interestRate2=1;
+//console.log(interestRate2);
+
+
+//There are two types of values we can assign to a variable:
+//Primitives / Value Types:
+//String       let apples="red";         *String literal
+//Number       let age=30;               *Number literal
+//Boolean      let isApproved=false;     *Boolean literal
+//undefined    let firstName;            *undefined
+//null         let selectedColor=null;   *null
+//symbol
+
+//Reference Types:
+//Object
+//Array
+//Function 
+
+
+//////////////////////////////////////////////OBJECT
+//the curly brackets make it an "object literal". the name and age are "value keys"
+let name="Balthazar";
+let age=200;
+
+// =
+
+let person = {
+    name: "Balthazar",
+    age: 200
+};
+
+
+
+//you can change the value of the variable by DOT NOTATION: person. (it will then list the assigned values)
+let person = {
+    name: "Balthazar",
+    age: 200
+};
+
+person.name="Joe";
+
+
+
+//or BRACKET NOTATION: person["name"] = "Alice";
+let person = {
+    name: "Balthazar",
+    age:200
+};
+
+person["name"] = "Alice";
+
+
+/////////////////////////////////////////////ARRAY
+//a data structure that we use to represent a list of items. like OBJECT, but uses block brackets, the block brackets make it "array literal"
+let selectedColors = ["black", "white"];
+
+
+////////////////////////////////////////////FUNCTION
+//a set of statements that performs a task/calculates value
+function niceToGreetYou() {
+    console.log("Yo!");   //<-- the body of the function, this is where you instruct it what to do
+}
+
+niceToGreetYou();
+//ALSO
+function niceToGreetYou(name) {               //name is a paramater of the greet function
+    console.log("Hello " + name);
+    
+}
+
+NiceToGreetYou("John");
+NiceToGreetYou("Jane");                      //john/jane is an argument to the greet function, the actual value we supply for that parameter
+//ALSO
+function niceToGreetYou(name, lastName) {                 
+    console.log("Hello " + name + " " + lastName);
+    
+}
+
+niceToGreetYou("John", "Doe");         
+
+//the below function will calculate a number
+function times(number) {
+   return number * number;
+}
+
+let number = times(2);
+              
+
+const name="John";
+const age="30";
+
+//concatenation (obsolete):
+//console.log("my name is " + name + "and I am " + age);
+
+//template literals
+console.log(`my name is ${name} and I am ${age}`);
+
+
+const s = "Hello World, Goodbye";
+console.log(s.substring(0,5));
+console.log(s.split(""));
+console.log(s.split(", "))
+
+const Countries = ["France", "Germany", "Italy"];
+Countries.push("Mexico");
+Countries.pop();
+console.log(Countries);
+
+const person = {
+    firstName: "John",
+    lastName: "Doe",
+    occupation: "occupied",
+    address: {
+        street: "broadway",
+        number: "25"
+    }
+    
+}
+console.log(person);
+
+
+const totoro = {
+    type: "Miyazaki",
+    color: "blue",
+    style: "fluffy"
+}
+console.log(totoro);
+
+const origami = {
+    animal: "unicorn",
+    color: "black"
+}
+console.log(origami);
+
+const flower = {
+    color:"white",
+    size:["small", "medium", "large"],
+    location: {
+        planet:"earth",
+        country:"Iraq"
+    },
+    smell:"good"
+}
+console.log(flower.size[1]);
+
+
+//creating an array []
+const todos = [
+    {
+    id: 1,
+    text: "Take out trash",
+    isCompleted: true
+},
+    {
+    id: 2,
+    text: "Meeting with Boss",
+    isCompleted: true
+},
+    {
+    id: 3,
+    text: "Doctor appt",
+    isCompleted: false
+}
+];
+console.log(todos[1].text);
+
+
+//loops are used to repeatedly run a block of code - until a certain condition is met
+
+//For Loops (this counts to 3)
+for(let i=0; i<=3;i++) {
+    console.log(i);
+}
+
+
+//While Loops
+let i=0;
+while(i<10){
+    console.log("While Loop Number: ${i}");
+    i++;
+}
+
+
+//loop through arrays
+for(let i=0; i<todos.length;i++) {
+    console.log(i);
+}
+
+//better method of looping through arrays (for of loop)
+for(let todo of todos) {
+    console.log(todo);
+}
+
+//high order array methods
+
+
+//appending variables to strings
+var someAdjective = "meh";
+var myStr = "Learning to code is ";
+myStr += someAdjective;
+console.log(myStr);
+
+
+//fill in the blanks
+var myNoun = "dog";
+var myAdjective = "big";
+var myVerb = "ran";
+var myAdverb = "quickly";
+
+var wordBlanks = "The " + myNoun + " was " + myAdjective + " and " + myVerb + " very " + myAdverb + ".";
+console.log(wordBlanks);
+
+
+// equals 3
+var sum = 0;
+function addSum(num) {
+  sum = sum + num;
+}
+addSum(3);
+console.log(sum);
+
+
+// equals 8
+var sum = 0;
+function addThree() {
+  sum = sum + 3;
+}
+function addFive(){
+  sum += 5;
+}
+addThree();
+addFive();
+console.log(sum);
+
+
+// equals 5
+var changed = 0;
+function change(num) 
+{
+return (num + 5) / 3;
+}
+changed = change(10);
+console.log(changed);
+
+
+
+
+ESCAPE SEQUENCES IN STRINGS:
+
+\'	single quote
+\"	double quote
+\\	backslash
+\n	newline
+\r	carriage return
+\t	tab
+\b	word boundary
+\f	form feed
+
+/////ADDING A STRING TO AN EXISTING STRING/////
+We can use the += operator to concatenate a string onto the end of an existing string variable. This can be very helpful to break a long string over several lines.
+
+/////PARAMETERS/////
+Parameters are variables that act as placeholders for the values that are to be input to a function when it is called. When a function is defined, it is typically defined along with one or more parameters. The actual values that are input (or "passed") into a function when it is called are known as arguments.
+
+Here is a function with two parameters, param1 and param2:
+
+function testFun(param1, param2) {
+  console.log(param1, param2);
+}
+
+
+/////SCOPE/////
+In JavaScript, scope refers to the visibility of variables. Variables which are defined outside of a function block have Global scope. This means, they can be seen everywhere in your JavaScript code.
+
+Variables which are used without the var keyword are automatically created in the global scope. This can create unintended consequences elsewhere in your code or when running a function again. You should always declare your variables with var.
+
+
+/////Return a Value from a Function with Return/////
+We can pass values into a function with arguments. You can use a return statement to send a value back out of a function (Return will return the end value back out into the source that called it in the first place).
+
+Example
+
+function plusThree(num) {
+  return num + 3;
+}
+var answer = plusThree(5); // 8
+plusThree takes an argument for num and returns a value equal to num + 3.
+
